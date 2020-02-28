@@ -13,6 +13,10 @@ Install from npm:
 
     npm install --save jmespath-plus
 
+## Online demo:
+
+https://codesandbox.io/embed/focused-lichterman-y867l?fontsize=14&hidenavigation=1&theme=dark
+
 ## Usage
 
 ```js
