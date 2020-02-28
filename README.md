@@ -7,6 +7,36 @@ This is an extension of a [fork](https://github.com/daz-is/jmespath.js) of the o
 It fully complies with the spec, and includes all tests
 from the original `jmespath.js` project.
 
+## Motivation
+
+There is an article on the XML website claiming that [You Should Be Using XSLT 3.0](https://www.xml.com/articles/2017/02/14/why-you-should-be-using-xslt-30/) to process JSON. If you take a look at the XSLT given for performing the transformation of the JSON in their example, it's (like XML in general) overly verbose. 
+
+I couldn't quite reproduce the same thing using the original JMESPath, but with my fork of JMESPath that allows for the 
+addition of custom functions, I could. By adding the `toPairs` function, there is now an elegant solution to the example
+from that XML article:
+
+```
+toPairs(employees)[*]
+  .merge(
+    [1],
+    {
+      id: [0],
+      fullName: join(' ', [[1].firstname, [1].surname]),
+      reverseName: join(', ', [[1].firstname, [1].surname])
+    }
+  )
+```
+
+The original jmespath.js repository has not been updated for many years. 
+There are many unanswered issues, including [this one](https://github.com/jmespath/jmespath.js/issues/60)
+inquiring about the project status. Also on the website repo there is [an issue](https://github.com/jmespath/jmespath.site/issues/65) about the project status.
+I submitted a [pull request](https://github.com/jmespath/jmespath.js/pull/61).
+
+In the meantime, I published my fork as a "scoped package" on NPM [here](https://www.npmjs.com/package/@daz.is/jmespath).
+
+This package is an extension of that fork, with some extra utility functions that I find useful. I added a few bits of lodash and some string functions. Open an issue if you need any extra functions added, or use the code in 
+`src/main.js` as an example and extend `@daz.is/jmespath.js` with your own functions.
+
 ## Install
 
 Install from npm:
