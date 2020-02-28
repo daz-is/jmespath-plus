@@ -22,7 +22,7 @@ toPairs(employees)[*]
     {
       id: [0],
       fullName: join(' ', [[1].firstname, [1].surname]),
-      reverseName: join(', ', [[1].firstname, [1].surname])
+      reverseName: join(', ', [[1].surname, [1].firstname])
     }
   )
 ```
