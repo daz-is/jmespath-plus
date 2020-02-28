@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/daz-is/jmespath-plus.png?branch=master)](https://travis-ci.org/daz-is/jmespath-plus)
 
-This is an extension of a [fork](https://github.com/daz-is/jmespath.js) of the original JMES Path.
+This is an extension of a [fork](https://github.com/daz-is/jmespath.js) of the original [JMESPath](http://jmespath.org/).
 
 It fully complies with the spec, and includes all tests
 from the original `jmespath.js` project.
