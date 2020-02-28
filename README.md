@@ -1,6 +1,6 @@
 # JMESPath+
 
-[![Build Status](https://travis-ci.org/daz-is/jmespath-plus.png?branch=publish)](https://travis-ci.org/daz-is/jmespath-plus)
+[![Build Status](https://travis-ci.org/daz-is/jmespath-plus.png?branch=master)](https://travis-ci.org/daz-is/jmespath-plus)
 
 This is an extension of a fork of the original JMES Path.
 
