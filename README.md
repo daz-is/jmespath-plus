@@ -7,6 +7,20 @@ This is an extension of a fork of the original JMES Path.
 It fully complies with the spec, and includes all tests
 from the original `jmespath.js` project.
 
+## Install
+
+Install from npm:
+
+    npm install --save jmespath-plus
+
+## Usage
+
+```js
+const jmespath = require('jmespath-plus');
+const v = jmespath.search({ a: 42 }, 'a');
+console.log(v); // output = 42
+```
+
 ## Additions
 
  - additional functions have been added (see below)
