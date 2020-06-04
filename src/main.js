@@ -66,5 +66,6 @@ export default {
   },
   search: function (data, expression) {
     return jmespath.decorate(functions)(expression)(data);
-  }
+  },
+  types: jmespath.types,
 };
