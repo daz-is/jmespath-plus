@@ -354,11 +354,6 @@
         "error": "syntax"
       },
       {
-        "comment": "Not a key-value pair",
-        "expression": "a.{foo}",
-        "error": "syntax"
-      },
-      {
         "comment": "Missing value",
         "expression": "a.{foo:}",
         "error": "syntax"
@@ -381,11 +376,6 @@
       {
         "comment": "Trailing comma",
         "expression": "a.{foo: bar, }",
-        "error": "syntax"
-      },
-      {
-        "comment": "Missing key in second key-value pair",
-        "expression": "a.{foo: bar, baz}",
         "error": "syntax"
       },
       {
