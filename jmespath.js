@@ -1237,7 +1237,7 @@
 	        // a minimum number of args to be required.  Otherwise it has to
 	        // be an exact amount.
 	        var pluralized;
-	        if (signature[signature.length - 1].variadic) {
+	        if (signature[signature.length - 1] && signature[signature.length - 1].variadic) {
 	            if (args.length < signature.length) {
 	                pluralized = signature.length === 1 ? " argument" : " arguments";
 	                throw new Error("ArgumentError: " + name + "() " +
