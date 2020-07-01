@@ -1237,6 +1237,8 @@
 	        // a minimum number of args to be required.  Otherwise it has to
 	        // be an exact amount.
 	        var pluralized;
+	        // first discount any optional arguments
+	        var numberOfRequiredArgs = signature.filter(function (s) { return !(s.optional || false); }).length;
 	        if (signature[signature.length - 1] && signature[signature.length - 1].variadic) {
 	            if (args.length < signature.length) {
 	                pluralized = signature.length === 1 ? " argument" : " arguments";
@@ -1244,7 +1246,7 @@
 	                                "takes at least" + signature.length + pluralized +
 	                                " but received " + args.length);
 	            }
-	        } else if (args.length !== signature.length) {
+	        } else if (args.length > numberOfRequiredArgs) {
 	            pluralized = signature.length === 1 ? " argument" : " arguments";
 	            throw new Error("ArgumentError: " + name + "() " +
 	                            "takes " + signature.length + pluralized +
@@ -1263,7 +1265,7 @@
 	                    break;
 	                }
 	            }
-	            if (!typeMatched) {
+	            if (!typeMatched && !signature[i].optional) {
 	                var expected = currentSpec
 	                    .map(function(typeIdentifier) {
 	                        return TYPE_NAME_TABLE[typeIdentifier];
