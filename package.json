@@ -1,6 +1,6 @@
 {
   "name": "jmespath-plus",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "jmespath.js extended with functions from lodash",
   "main": "jmespath.js",
   "types": "jmespath.d.ts",
