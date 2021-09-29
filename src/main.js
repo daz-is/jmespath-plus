@@ -12,7 +12,7 @@ const functions = {
     _signature: [{types: [jmespath.types.TYPE_STRING]}]
   },
   replace: {
-    _func: ([s, v, nv]) => s.replace(v, nv),
+    _func: ([s, v, nv]) => s.replace(new RegExp(v), nv),
     _signature: [
     {types: [jmespath.types.TYPE_STRING]},
     {types: [jmespath.types.TYPE_STRING]},
