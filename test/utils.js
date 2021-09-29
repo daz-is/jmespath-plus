@@ -4,6 +4,15 @@ var search = jmespath.search;
 
 describe('custom functions', function() {
   it(
+    'string replace',
+    function() {
+      const data = { foo: "test"};
+      const expr = "replace(foo, 'test', 'a')";
+      const value = search(data, expr);
+      assert.equal(value, "a");
+    }
+  );
+  it(
     'string toLowerCase',
     function() {
       const data = { foo: "aMixedCaseThing"};
