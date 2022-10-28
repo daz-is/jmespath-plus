@@ -57,15 +57,18 @@ const functions = {
   },
 };
 
+let customFunctions = {};
+
 export default {
   strictDeepEqual: jmespath.strictDeepEqual,
   tokenize: jmespath.tokenize,
   compile: jmespath.compile,
   decorate: function (fns) {
-    return jmespath.decorate({...functions, ...fns});
+    customFunctions = {...functions, ...fns};
+    return jmespath.decorate(customFunctions);
   },
   search: function (data, expression) {
-    return jmespath.decorate(functions)(expression)(data);
+    return jmespath.decorate(customFunctions)(expression)(data);
   },
   types: jmespath.types,
 };
